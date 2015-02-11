@@ -47,7 +47,7 @@ Example
 
 The currently still running API can be found here:
 
-	http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws/search
+A [http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws/search]
 
 As mentioned, the following parameters are supported:
 
