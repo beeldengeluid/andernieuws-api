@@ -3,8 +3,16 @@ Ander Nieuws API
 
 In the Ander Nieuws project, 3 years (2011-2013) of daily news broadcasts were subjected to the following analysis work flow:
 1) automatic speech recognition (yielding speech transcripts)
-2) keyword detection, based on the speech transcripts (using statistical analysis, involving stopword removal and TF-IDF)
+2) keyword detection, based on the speech transcripts (see keyword detection)
 3) indexation of the speech transcripts and keywords in ElasticSearch
+
+
+Keyword detection
+----------------
+Keywords were detected based on the following (statistical) analysis techniques:
+- Stopword removal
+- TF-IDF
+
 
 API
 ----------------
@@ -19,14 +27,14 @@ The obtained clusters are retrieved as follows, given the search string and the 
 3. For all of the found occurances per news show, the keywords occurring in a radius of 5 seconds around the occurance are retrieved
 4. Finally based on the found keywords per news video, the data is grouped per keyword so that eventually the API returns instances as follows:
 
-topicData['KEYWORD'] = {
-	mediaItems['NEWS_PROGRAM_ID'] = [
-		{
-			topic  : 'KEYWORD',
-			videoUrl : 'URL TO NEWS VIDEO FILE',
-			audioUrl : 'URL TO NEWS AUDIO FILE',
-			date : 'DATE OF NEWS PROGRAM',
-			spokenAt : 'TIMES WITHIN NEWS PROGRAM THE KEYWORD IS UTTERED'
-		}
-	]
-}
+	topicData['KEYWORD'] = {
+		mediaItems['NEWS_PROGRAM_ID'] = [
+			{
+				topic  : 'KEYWORD',
+				videoUrl : 'URL TO NEWS VIDEO FILE',
+				audioUrl : 'URL TO NEWS AUDIO FILE',
+				date : 'DATE OF NEWS PROGRAM',
+				spokenAt : 'TIMES WITHIN NEWS PROGRAM THE KEYWORD IS UTTERED'
+			}
+		]
+	}
