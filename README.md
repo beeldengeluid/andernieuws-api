@@ -30,6 +30,7 @@ The obtained clusters are retrieved as follows, given the search string and the 
 4. Finally based on the found keywords per news video, the data is grouped per keyword so that eventually the API returns instances as follows:
 
 
+Example
 
 	topicData['KEYWORD'] = {
 		mediaItems['NEWS_PROGRAM_ID'] = [
