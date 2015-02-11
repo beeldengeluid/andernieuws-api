@@ -47,7 +47,7 @@ Example
 
 The currently still running API can be found here:
 
-A [http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws/search]
+http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws/search
 
 As mentioned, the following parameters are supported:
 
@@ -55,9 +55,9 @@ As mentioned, the following parameters are supported:
 * sd: (optional) the start date (dd-mm-yyyy)
 * ed: (optional) the end date (dd-mm-yyyy)
 
-So for example to search for a term within a certain time range:
+For example to search for a term within a certain time range:
 
-	http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws/search?s=haven&sd=02-01-2013&ed=02-03-2013
+http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws/search?s=haven&sd=02-01-2013&ed=02-03-2013
 
 Concerning searches within a certain period, it is possible to only supply a start date or an end date. In these cases the search will only search from or until a certain date.
 
@@ -67,6 +67,6 @@ Visualization prototype
 
 It's possible to experiment with the Ander Nieuws data by using the following prototype that was built on top of the API:
 
-	http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws
+http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws
 
 
