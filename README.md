@@ -29,6 +29,7 @@ The obtained clusters are retrieved as follows, given the search string and the 
 3. For all of the found occurances per news show, the keywords occurring in a radius of 5 seconds around the occurance are retrieved
 4. Finally based on the found keywords per news video, the data is grouped per keyword so that eventually the API returns instances as follows:
 
+
 	topicData['KEYWORD'] = {
 		mediaItems['NEWS_PROGRAM_ID'] = [
 			{
