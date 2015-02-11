@@ -14,10 +14,19 @@ The API was built on top of the ElasticSearch index and supports the retrieval o
 - a data range
 
 The obtained clusters are retrieved as follows, given the search string and the date range:
-- The index is searched for all occurances of the search string within the speech transcript
-- For each hit, the keywords occuring in a radius of 5 seconds around the spoken word are retrieved
-- Each retrieved cluster is grouped based on... TODO
+1. The index is searched for all occurances of the search string within the speech transcript
+2. All hits are grouped per news video (it's possible that the search word occurs multiple times within the news vide)
+3. For all of the found occurances per news show, the keywords occurring in a radius of 5 seconds around the occurance are retrieved
+4. Finally based on the found keywords per news video, the data is grouped per keyword so that eventually the API returns instances as follows:
 
-
-
-
+topicData['KEYWORD'] = {
+	mediaItems['NEWS_PROGRAM_ID'] = [
+		{
+			topic  : 'KEYWORD',
+			videoUrl : 'URL TO NEWS VIDEO FILE',
+			audioUrl : 'URL TO NEWS AUDIO FILE',
+			date : 'DATE OF NEWS PROGRAM',
+			spokenAt : 'TIMES WITHIN NEWS PROGRAM THE KEYWORD IS UTTERED'
+		}
+	]
+}
