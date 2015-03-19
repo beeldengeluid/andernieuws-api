@@ -66,7 +66,7 @@ The API was built on top of the ElasticSearch index and supports the retrieval o
 The obtained clusters are retrieved as follows, given the search string and the specified period:
 
 1. The index is searched for all occurances the search word is mentioned in news videos (that were broadcast within the given period)
-2. All hits are grouped per news video (it's possible that the search word occurs multiple times within the news vide)
+2. All hits are grouped per news video (it's possible that the search word occurs multiple times within the news video)
 3. For all of the found occurances per news show, the keywords occurring in a radius of 5 seconds around the occurance are retrieved
 4. Finally based on the found keywords per news video, the data is grouped per keyword so that eventually the API returns instances as follows:
 
