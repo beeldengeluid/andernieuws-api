@@ -111,3 +111,40 @@ It's possible to experiment with the Ander Nieuws data by using the following pr
 http://andernieuws.rdlabs.beeldengeluid.nl/andernieuws
 
 
+Using the source
+=================
+
+
+The source consists of two things:
+* The ASRIndexer.py and main.py (Python code) that enables the indexing of our ASR XMLs.
+* The andernieuws-server.js (NodeJS) which runs the API
+
+Indexing
+---------------
+The indexing script requires the following:
+
+* Make sure to install  (https://www.elastic.co/products/elasticsearch)
+* Before running the script, make sure to create an index that uses the provided mapping.json and setting.json (see the resource folder). You can create this index yourself or use the createIndex() function that is part of the ASRIndexer.py script
+* Make sure that you have installed all the required Python libraries (check the imports at the top). Most likely you need to install lxml (http://lxml.de/) and elasticsearch (https://github.com/elastic/elasticsearch-py)
+* Make sure to fill a directory with ASR transcripts (see ASR XML format)
+
+Then make sure to uncomment the desired commands in main.py, depending what you want:
+
+	""" uncomment the following to create an empty index on your local Elasticsearch"""
+	#indexer.createIndex(es, indexName, '../resources/settings.json', '../resources/mapping.json')
+
+	""" uncomment the following to index a directory with ASR files"""
+	#x.indexASRDirectory('PATH TO YOUR DIRECTORY HOLDING ASR XML FILES', es, indexName)
+
+
+Then you can run the indexer by:
+
+	python main.py
+
+
+To run the
+
+Running the API
+-----------------
+
+TODO

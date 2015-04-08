@@ -1,0 +1,56 @@
+{
+    "analysis" : {
+        "analyzer":{
+            "keyword_lowercase":{
+                "type": "custom",
+                "tokenizer": "keyword",
+                "filter": ["lowercase"]
+            },
+            "keyword_lowercase_truncate":{
+                "type": "custom",
+                "tokenizer": "keyword",
+                "filter": ["lowercase", "custom_truncate"]
+            },
+            "text_nl":{
+                "type": "custom",
+                "tokenizer": "whitespace",
+                "filter": [
+                    "asciifolding",
+                    "lowercase",
+                    "custom_word_delimiter"
+                ]
+            },
+            "text_nl_stemmed":{
+                "type": "custom",
+                "tokenizer": "whitespace",
+                "filter": [
+                    "asciifolding",
+                    "lowercase",
+                    "custom_word_delimiter",
+                    "hunspell_nl"
+                ]
+            }
+        },
+        "filter" : {
+            "hunspell_nl" : {
+                "type" : "hunspell",
+                "locale" : "nl_NL",
+                "dedup" : true
+            },
+            "custom_word_delimiter": {
+                "type": "word_delimiter",
+                "generate_word_parts": true,
+                "generate_number_parts": true,
+                "catenate_numbers": true,
+                "catenate_words": false,
+                "split_on_case_change": false,
+                "split_on_numerics": false,
+                "stem_english_possessive": false
+            },
+            "custom_truncate": {
+                "type": "truncate",
+                "length": "50"
+            }
+        }
+    }
+}

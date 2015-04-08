@@ -1,0 +1,11 @@
+{	
+	"asr_chunk": {
+		"properties": {
+			"asr_file": {
+				"index": "not_analyzed",
+				"type": "string"
+			}
+		},
+		"dynamic_date_formats" : [ "dd-MM-yyyy", "date_hour_minute_second", "date_time" ]
+	}
+}
