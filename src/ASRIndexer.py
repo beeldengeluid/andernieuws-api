@@ -17,6 +17,10 @@ class ASRIndexer():
         self.allKeywords = {}
         self._stopWordsFile = '../resources/stoplist_tno.tab'
         self._IDFFile = '../resources/top.wfreq'
+        self.ES_USER = 'YOUR_USER'
+        self.ES_PW = 'YOUR_PW'
+        self.ES_HOST = 'YOUR_ES_HOST'
+        self.ES_PORT = 9200 # YOUR PORT
 
     def createIndex(self, es, indexName, settingsFile, mappingFile, delete = False):
         iclient = IndicesClient(es)
@@ -145,10 +149,10 @@ class ASRIndexer():
 
     def getMetaData(self, asrFile):
         es_immix = Elasticsearch(hosts=[{
-            'host' : 'ltes1.beeldengeluid.nl',
-            'port' : 9200,
+            'host' : self.ES_HOST,
+            'port' : self.ES_PORT,
             'url_prefix' : '',
-            'http_auth' : '%s:%s' % ('admin', 'yk4search')
+            'http_auth' : '%s:%s' % (self.ES_USER, self.ES_PW)
         }])
         parts = asrFile.split("_")
         dmguid = parts[0]
